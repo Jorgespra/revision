@@ -1,7 +1,13 @@
 package org.bedu.java.backend.veterinaria.repository;
 
-import org.bedu.java.backend.veterinaria.model.Mascota;
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
-public interface MascotaRepository extends JpaRepository<Mascota, Long> {
+import org.bedu.java.backend.veterinaria.model.Mascota;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface MascotaRepository extends CrudRepository<Mascota, Long> {
+    
+    List<Mascota> findAll();
 }
